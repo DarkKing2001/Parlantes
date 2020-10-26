@@ -11,7 +11,7 @@ def inicio(requeest):
     context = {}
     return render(requeest, 'parlantes/index.html', context)
 
-def parlantes(requeest):
-    print("Estamos en la vista parlantes..")
+def tipo_parlante(requeest):
+    print("Estamos en la vista tipo parlante..")
     context = {}
     return render(requeest, 'parlantes/tipoParlantes.html', context)
