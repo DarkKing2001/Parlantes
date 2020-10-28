@@ -6,8 +6,8 @@ def base(requeest):
     context = {}
     return render(requeest, 'parlantes/base.html', context)
 
-def inicio(requeest):
-    print("Estamos en la vista inicio..")
+def menu(requeest):
+    print("Estamos en la vista menu..")
     context = {}
     return render(requeest, 'parlantes/index.html', context)
 
