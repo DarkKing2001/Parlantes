@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Editar Alumno</h1>
+    <br>
+    <br>
+
+    <form action="editar_por_rut" method="post">
+        {% csrf_token %}
+        <label>Ingrese el RUT para modificar</label>
+        <input type="text" name="rut">
+        <input type="submit" name="opcion" value="Buscar">
+    </form>
+</body>
+</html>

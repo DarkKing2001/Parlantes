@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>listado de Alumnos</title>
+</head>
+<body>
+    <h1>Listado de Alumnos</h1>
+
+    <br><br>
+
+    la cantidad de alumnos es {{ listado | length }} <br> <br>
+
+    {% for alumno in listado %}
+        {{ alumno.rut}} - {{ alumno.nombre}}
+        <br>
+    {% endfor %}
+
+</body>
+</html>
