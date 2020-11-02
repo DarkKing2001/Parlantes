@@ -10,16 +10,15 @@
 
     <form action="agregar_alumno" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <label>Rut        :</label><input type="text" name="rut"><br>
+
         <label>Nombre     :</label><input type="text" name="nombre"><br>
-        <label>A.Paterno  :</label><input type="text" name="aPaterno"><br>
-        <label>A.Materno  :</label><input type="text" name="aMaterno"><br>
-        <label>Fecha Nac. :</label><input type="date" name="fechaNac"><br>
-        <label>Género     :</label>
-         <select name="genero">
+         <select name="tipo">
              <option value="seleccionar" disabled>Seleccionar</option>
-             <option value="masculino">Masculino</option>
-             <option value="femenino">Femenino</option>
+             <option value="bazucas">Bazuca</option>
+             <option value="Karaoke">Karaoke</option>
+             <option value="parlantes">Parlante</option>
+             <option value="cubos">Cubo</option>
+             <option value="deDJ">De DJ</option>
          </select>
 
         <tr><td><label>Foto     :</label><td><input type="file" name="foto">
