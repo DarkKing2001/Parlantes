@@ -16,7 +16,8 @@ def menu(requeest):
 
 def tipo_parlante(requeest):
     print("Estamos en la vista tipo parlante..")
-    context = {}
+    lista = Parlante.objects.all()
+    context={'listado' : lista}
     return render(requeest, 'parlantes/tipoParlantes.html', context)
 
 def agregar(request):
