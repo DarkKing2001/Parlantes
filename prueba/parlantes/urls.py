@@ -13,4 +13,5 @@ urlpatterns = [
     path('eliminar', views.eliminar, name='eliminar'),
     path('eliminar_por_nombre', views.eliminar_por_nombre, name='eliminar_por_nombre'),
     path('editar', views.editar, name='editar'),
+    path('editar_por_nombre', views.editar_por_nombre, name='editar_por_nombre'),
 ]
