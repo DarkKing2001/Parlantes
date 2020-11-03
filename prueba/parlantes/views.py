@@ -15,3 +15,8 @@ def tipo_parlante(requeest):
     print("Estamos en la vista tipo parlante..")
     context = {}
     return render(requeest, 'parlantes/tipoParlantes.html', context)
+
+def agregar(request):
+    print("ok, estamos en la vista agregarr")
+    context={}
+    return render(request, 'personas/formulario_agregar.html', context)
