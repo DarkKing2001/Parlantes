@@ -55,7 +55,7 @@ def boton_buscar(request):
     context={}
     return render(request, 'parlantes/crud/boton_buscar.html', context)
 
-def buscar_por_rut(request):
+def buscar_por_nombre(request):
     print("hola  estoy en buscar_por_rut...")
     if request.method == 'POST':
        mi_nombre = request.POST['rut']
