@@ -35,21 +35,17 @@ def agregar_parlante(request):
            try:
                parlante = Parlante()
 
-               alumno.rut = mi_rut
-               alumno.nombre = mi_nombre
-               alumno.apellido_paterno = mi_paterno
-               alumno.apellido_materno = mi_materno
-               alumno.fecha_nacimiento = mi_fechaNac
-               alumno.genero = mi_genero
-               alumno.foto = mi_foto
+               parlante.nombre = mi_nombre
+               parlante.tipo = mi_tipo
+               parlante.foto = mi_foto
 
-               alumno.save()
+               parlante.save()
 
-               return render(request, 'personas/mensajes/datos_grabados.html',{})
+               return render(request, 'parlantes/mensajes/datos_grabados.html',{})
 
-           except alumno.DoesNotExist:
-               return render(request, 'personas/error/error_204.html', {})
+           except parlante.DoesNotExist:
+               return render(request, 'parlantes/error/error_204.html', {})
        else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'parlantes/error/error_201.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'parlantes/error/error_203.html', {})
