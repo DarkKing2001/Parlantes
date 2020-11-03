@@ -77,3 +77,8 @@ def buscar_por_nombre(request):
            return render(request, 'parlantes/error/error_201.html', {})
     else:
         return render(request, 'parlantes/error/error_203.html', {})
+
+def eliminar(request):
+    print("ok, estamos en la vista eliminar")
+    context={}
+    return render(request, 'parlantes/crud//boton_eliminar.html', context)
