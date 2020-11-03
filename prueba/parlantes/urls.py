@@ -11,4 +11,5 @@ urlpatterns = [
     path('boton_buscar', views.boton_buscar, name='boton_buscar'),
     path('buscar_por_nombre', views.buscar_por_nombre, name='buscar_por_nombre'),
     path('eliminar', views.eliminar, name='eliminar'),
+    path('eliminar_por_nombre', views.eliminar_por_nombre, name='eliminar_por_nombre'),
 ]
