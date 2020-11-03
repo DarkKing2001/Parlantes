@@ -54,3 +54,25 @@ def boton_buscar(request):
     print("ok, estamos en la vista boton buscar")
     context={}
     return render(request, 'parlantes/crud/boton_buscar.html', context)
+
+def buscar_por_rut(request):
+    print("hola  estoy en buscar_por_rut...")
+    if request.method == 'POST':
+       mi_nombre = request.POST['rut']
+
+       if mi_nombre != "":
+           try:
+               parlante = Parlante()
+               parlante = Parlante.objects.get(nombre=mi_nombre)
+               if parlante is not None:
+                   print("Parlante=", parlante)
+                   context={'parlante': parlante}
+                   return render(request, 'parlantes/crud//mostrar_datos.html', context)
+               else:
+                   return render(request, 'parlantes/error/error_202.html',{})
+           except parlante.DoesNotExist:
+               return render(request, 'parlantes/error/error_202.html', {})
+       else:
+           return render(request, 'parlantes/error/error_201.html', {})
+    else:
+        return render(request, 'parlantes/error/error_203.html', {})
