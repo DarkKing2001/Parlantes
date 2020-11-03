@@ -19,4 +19,4 @@ def tipo_parlante(requeest):
 def agregar(request):
     print("ok, estamos en la vista agregarr")
     context={}
-    return render(request, 'personas/formulario_agregar.html', context)
+    return render(request, 'parlantes/crud/formulario_agregar.html', context)
