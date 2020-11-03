@@ -51,6 +51,12 @@
               <img src="{%  static 'imagenes/par8.jpg' %}" alt="" >
               <a href="#">Cubito Negro</a>
             </div>
+            {% for parlante in listado %}
+              <div class="product-item" category="{{parlante.tipo}}">
+                <img src="{{parlante.foto.url}}" alt="" >
+                <a href="#">{{parlante.nombre}}</a>
+              </div>
+            {% endfor %}
           </section>
       </div>
     </div>
