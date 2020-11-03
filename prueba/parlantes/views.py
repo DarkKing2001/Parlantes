@@ -45,11 +45,11 @@ def agregar_parlante(request):
                return render(request, 'parlantes/mensajes/datos_grabados.html',{})
 
            except parlante.DoesNotExist:
-               return render(request, 'parlantes/error/error_204.html', {})
+               return render(request, 'parlantes/errores/error_204.html', {})
        else:
-           return render(request, 'parlantes/error/error_201.html', {})
+           return render(request, 'parlantes/errores/error_201.html', {})
     else:
-        return render(request, 'parlantes/error/error_203.html', {})
+        return render(request, 'parlantes/errores/error_203.html', {})
 
 def boton_buscar(request):
     print("ok, estamos en la vista boton buscar")
@@ -59,7 +59,7 @@ def boton_buscar(request):
 def buscar_por_nombre(request):
     print("hola  estoy en buscar_por_rut...")
     if request.method == 'POST':
-       mi_nombre = request.POST['rut']
+       mi_nombre = request.POST['nombre']
 
        if mi_nombre != "":
            try:
@@ -68,15 +68,15 @@ def buscar_por_nombre(request):
                if parlante is not None:
                    print("Parlante=", parlante)
                    context={'parlante': parlante}
-                   return render(request, 'parlantes/crud//mostrar_datos.html', context)
+                   return render(request, 'parlantes/crud/mostrar_datos.html', context)
                else:
-                   return render(request, 'parlantes/error/error_202.html',{})
+                   return render(request, 'parlantes/errores/error_202.html',{})
            except parlante.DoesNotExist:
-               return render(request, 'parlantes/error/error_202.html', {})
+               return render(request, 'parlantes/errores/error_202.html', {})
        else:
-           return render(request, 'parlantes/error/error_201.html', {})
+           return render(request, 'parlantes/errores/error_201.html', {})
     else:
-        return render(request, 'parlantes/error/error_203.html', {})
+        return render(request, 'parlantes/errores/error_203.html', {})
 
 def eliminar(request):
     print("ok, estamos en la vista eliminar")
@@ -97,13 +97,13 @@ def eliminar_por_nombre(request):
                    parlante.delete()
                    return render(request, 'parlantes/mensajes/parlante_eliminado.html', {})
                else:
-                   return render(request, 'parlantes/error/error_202.html',{})
+                   return render(request, 'parlantes/errores/error_202.html',{})
            except parlante.DoesNotExist:
-               return render(request, 'parlantes/error/error_202.html', {})
+               return render(request, 'parlantes/errores/error_202.html', {})
        else:
-           return render(request, 'parlantes/error/error_201.html', {})
+           return render(request, 'parlantes/errores/error_201.html', {})
     else:
-        return render(request, 'parlantes/error/error_203.html', {})
+        return render(request, 'parlantes/errores/error_203.html', {})
 
 def editar(request):
     print("ok, estamos en la vista editar")
@@ -124,13 +124,13 @@ def editar_por_nombre(request):
                    context={'parlante': parlante}
                    return render(request, 'parlantes/crud/formulario_editar.html', context)
                else:
-                   return render(request, 'parlantes/error/error_202.html',{})
+                   return render(request, 'parlantes/errores/error_202.html',{})
            except parlante.DoesNotExist:
-               return render(request, 'parlantes/error/error_202.html', {})
+               return render(request, 'parlantes/errores/error_202.html', {})
        else:
-           return render(request, 'parlantes/error/error_201.html', {})
+           return render(request, 'parlantes/errores/error_201.html', {})
     else:
-        return render(request, 'parlantes/error/error_203.html', {})
+        return render(request, 'parlantes/errores/error_203.html', {})
 
 def actualizar_parlante(request):
     print("hola  estoy en actualizar_parlante...")
@@ -155,8 +155,8 @@ def actualizar_parlante(request):
                return render(request, 'parlantes/mensajes/dato_editado.html',{})
 
            except parlante.DoesNotExist:
-               return render(request, 'parlantes/error/error_204.html', {})
+               return render(request, 'parlantes/errores/error_204.html', {})
        else:
-           return render(request, 'parlantes/error/error_201.html', {})
+           return render(request, 'parlantes/errores/error_201.html', {})
     else:
-        return render(request, 'parlantes/error/error_203.html', {})
+        return render(request, 'parlantes/errores/error_203.html', {})
