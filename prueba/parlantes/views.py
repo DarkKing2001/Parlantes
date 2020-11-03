@@ -131,3 +131,32 @@ def editar_por_nombre(request):
            return render(request, 'parlantes/error/error_201.html', {})
     else:
         return render(request, 'parlantes/error/error_203.html', {})
+
+def actualizar_parlante(request):
+    print("hola  estoy en actualizar_parlante...")
+    if request.method == 'POST':
+
+       mi_id     = request.POST['id_parlante']
+       mi_nombre = request.POST['nombre']
+       mi_tipo   = request.POST['tipo']
+       mi_foto   = request.FILES['foto']
+
+       if mi_nombre != "":
+           try:
+               parlante = Parlante()
+
+               parlante.id_parlante = mi_id
+               parlante.nombre = mi_nombre
+               parlante.genero = mi_tipo
+               parlante.foto = mi_foto
+
+               parlante.save()
+
+               return render(request, 'parlantes/mensajes/dato_editado.html',{})
+
+           except parlante.DoesNotExist:
+               return render(request, 'parlantes/error/error_204.html', {})
+       else:
+           return render(request, 'parlantes/error/error_201.html', {})
+    else:
+        return render(request, 'parlantes/error/error_203.html', {})
