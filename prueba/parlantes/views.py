@@ -109,3 +109,25 @@ def editar(request):
     print("ok, estamos en la vista editar")
     context = {}
     return render(request, 'parlantes/boton_editar.html', context)
+
+def editar_por_nombre(request):
+    print("hola  estoy en editar_por_nombre...")
+    if request.method == 'POST':
+       mi_nombre = request.POST['nombre']
+
+       if mi_nombre != "":
+           try:
+               parlante = Parlante()
+               parlante = Parlante.objects.get(nombre = mi_nombre)
+               if parlante is not None:
+                   print("Parlante=", parlante)
+                   context={'parlante': parlante}
+                   return render(request, 'parlantes/crud/formulario_editar.html', context)
+               else:
+                   return render(request, 'parlantes/error/error_202.html',{})
+           except parlante.DoesNotExist:
+               return render(request, 'parlantes/error/error_202.html', {})
+       else:
+           return render(request, 'parlantes/error/error_201.html', {})
+    else:
+        return render(request, 'parlantes/error/error_203.html', {})
