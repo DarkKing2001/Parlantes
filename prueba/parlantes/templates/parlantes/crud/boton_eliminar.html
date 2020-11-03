@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Eliminar</title>
 </head>
 <body>
     <h1> Boton eliminar</h1>
     <br>
     <br>
 
-    <form action="eliminar_por_rut" method="post">
+    <form action="eliminar_por_nombre" method="post">
         {% csrf_token %}
-        <label>Ingrese el RUT para eliminar</label>
+        <label>Ingrese el nombre para eliminar</label>
         <input type="text" name="rut">
         <input type="submit" name="opcion" value="Eliminar">
     </form>
