@@ -82,3 +82,25 @@ def eliminar(request):
     print("ok, estamos en la vista eliminar")
     context={}
     return render(request, 'parlantes/crud//boton_eliminar.html', context)
+
+def eliminar_por_nombre(request):
+    print("hola  estoy en eliminar_por_nombre...")
+    if request.method == 'POST':
+       mi_nombre = request.POST['nombre']
+
+       if mi_nombre != "":
+           try:
+               parlante = Parlante()
+               parlante = Parlante.objects.get(nombre = mi_nombre)
+               if parlante is not None:
+                   print("Parlante=", parlante)
+                   parlante.delete()
+                   return render(request, 'parlantes/mensajes/parlante_eliminado.html', {})
+               else:
+                   return render(request, 'parlantes/error/error_202.html',{})
+           except parlante.DoesNotExist:
+               return render(request, 'parlantes/error/error_202.html', {})
+       else:
+           return render(request, 'parlantes/error/error_201.html', {})
+    else:
+        return render(request, 'parlantes/error/error_203.html', {})
