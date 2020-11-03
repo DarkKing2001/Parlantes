@@ -108,7 +108,7 @@ def eliminar_por_nombre(request):
 def editar(request):
     print("ok, estamos en la vista editar")
     context = {}
-    return render(request, 'parlantes/boton_editar.html', context)
+    return render(request, 'parlantes/crud/boton_editar.html', context)
 
 def editar_por_nombre(request):
     print("hola  estoy en editar_por_nombre...")
@@ -147,7 +147,7 @@ def actualizar_parlante(request):
 
                parlante.id_parlante = mi_id
                parlante.nombre = mi_nombre
-               parlante.genero = mi_tipo
+               parlante.tipo = mi_tipo
                parlante.foto = mi_foto
 
                parlante.save()
