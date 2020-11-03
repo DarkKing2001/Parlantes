@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Editar</title>
 </head>
 <body>
-    <h1> Editar Alumno</h1>
+    <h1> Editar Parlante</h1>
     <br>
     <br>
 
-    <form action="editar_por_rut" method="post">
+    <form action="editar_por_nombre" method="post">
         {% csrf_token %}
-        <label>Ingrese el RUT para modificar</label>
-        <input type="text" name="rut">
+        <label>Ingrese el Nombre para modificar</label>
+        <input type="text" name="nombre">
         <input type="submit" name="opcion" value="Buscar">
     </form>
 </body>
