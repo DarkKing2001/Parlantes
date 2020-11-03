@@ -8,4 +8,5 @@ urlpatterns = [
     path('menu', views.menu, name='menu'),
     path('agregar', views.agregar, name='agregar'),
     path('agregar_parlante', views.agregar_parlante, name='agregar_parlante'),
+    path('boton_buscar', views.boton_buscar, name='boton_buscar'),
 ]
