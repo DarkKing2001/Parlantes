@@ -26,14 +26,37 @@
     </head>
     <body>
 
-        <nav>
-            <div id="pestania" class="nav-wrapper">
-              <a href="menu" class="brand-logo"><i class="large material-icons">radio</i></a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="tipo_parlante">Parlantes</a></li>
-              </ul>
-            </div>
-        </nav>
+        {% if user.get_username == admin %}
+            <ul id="dropdown1" class="dropdown-content">
+              <li><a href="#!">one</a></li>
+              <li><a href="#!">two</a></li>
+              <li class="divider"></li>
+              <li><a href="#!">three</a></li>
+            </ul>
+            <nav>
+              <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo</a>
+                <ul class="right hide-on-med-and-down">
+                  <li><a href="sass.html">Sass</a></li>
+                  <li><a href="badges.html">Components</a></li>
+                  <!-- Dropdown Trigger -->
+                  <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+              </div>
+            </nav>
+        {% else %}
+            <div class="navbar-fixed">
+                <nav>
+                    <div id="pestania" class="nav-wrapper">
+                      <a href="menu" class="brand-logo"><i class="large material-icons">radio</i></a>
+                      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="tipo_parlante">Parlantes</a></li>
+                      </ul>
+                    </div>
+                </nav>
+            </div>    
+        {% endif %}
+
 
         {% block content %}
 
