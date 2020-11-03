@@ -9,22 +9,30 @@ def base(requeest):
     context = {}
     return render(requeest, 'parlantes/base.html', context)
 
+#decorador
+@login_required
 def menu(requeest):
     print("Estamos en la vista menu..")
     context = {}
     return render(requeest, 'parlantes/index.html', context)
 
+#decorador
+@login_required
 def tipo_parlante(requeest):
     print("Estamos en la vista tipo parlante..")
     lista = Parlante.objects.all()
     context={'listado' : lista}
     return render(requeest, 'parlantes/tipoParlantes.html', context)
 
+#decorador
+@login_required
 def agregar(request):
     print("ok, estamos en la vista agregarr")
     context={}
     return render(request, 'parlantes/crud/formulario_agregar.html', context)
 
+#decorador
+@login_required
 def agregar_parlante(request):
     print("hola  estoy en agregar_parlante...")
     if request.method == 'POST':
@@ -51,11 +59,15 @@ def agregar_parlante(request):
     else:
         return render(request, 'parlantes/errores/error_203.html', {})
 
+#decorador
+@login_required
 def boton_buscar(request):
     print("ok, estamos en la vista boton buscar")
     context={}
     return render(request, 'parlantes/crud/boton_buscar.html', context)
 
+#decorador
+@login_required
 def buscar_por_nombre(request):
     print("hola  estoy en buscar_por_rut...")
     if request.method == 'POST':
@@ -78,11 +90,15 @@ def buscar_por_nombre(request):
     else:
         return render(request, 'parlantes/errores/error_203.html', {})
 
+#decorador
+@login_required
 def eliminar(request):
     print("ok, estamos en la vista eliminar")
     context={}
     return render(request, 'parlantes/crud//boton_eliminar.html', context)
 
+#decorador
+@login_required
 def eliminar_por_nombre(request):
     print("hola  estoy en eliminar_por_nombre...")
     if request.method == 'POST':
@@ -105,11 +121,15 @@ def eliminar_por_nombre(request):
     else:
         return render(request, 'parlantes/errores/error_203.html', {})
 
+#decorador
+@login_required
 def editar(request):
     print("ok, estamos en la vista editar")
     context = {}
     return render(request, 'parlantes/crud/boton_editar.html', context)
 
+#decorador
+@login_required
 def editar_por_nombre(request):
     print("hola  estoy en editar_por_nombre...")
     if request.method == 'POST':
@@ -132,6 +152,8 @@ def editar_por_nombre(request):
     else:
         return render(request, 'parlantes/errores/error_203.html', {})
 
+#decorador
+@login_required
 def actualizar_parlante(request):
     print("hola  estoy en actualizar_parlante...")
     if request.method == 'POST':
