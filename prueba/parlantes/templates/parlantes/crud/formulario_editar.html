@@ -10,24 +10,39 @@
     <br><br>
     <form action="actualizar_alumno" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="hidden" name="id_alumno" value="{{alumno.id_alumno}}">
-        <label>Rut      :</label><input type="text" name="rut" value="{{alumno.rut}}"><br>
-        <label>Nombre   :</label><input type="text" name="nombre" value="{{alumno.nombre}}"><br>
-        <label>A.Paterno:</label><input type="text" name="aPaterno" value="{{alumno.apellido_paterno}}"><br>
-        <label>A.Materno:</label><input type="text" name="aMaterno" value="{{alumno.apellido_materno}}"><br>
-        <label>Fecha Nac:</label><input type="date" name="fechaNac" value="{{alumno.fecha_nacimiento|date:'Y-m-d'  }}"><br>
-        <label>Género   :</label>
-         <select name="genero" value="{{alumno.genero}}">
+        <input type="hidden" name="id_parlante" value="{{parlante.id_parlante}}">
+        <label>Nombre   :</label><input type="text" name="nombre" value="{{parlante.nombre}}"><br>
+        <label>Tipo   :</label>
+         <select name="tipo" value="{{parlante.genero}}">
              <option value="Seleccionar" disabled>Seleccionar</option>
-             {% if alumno.genero == "masculino" %}
-                 <option value="masculino" selected>Masculino</option>
+             {% if parlante.tipo == "bazucas" %}
+                 <option value="bazucas" selected>Bazuca</option>
              {% else %}
-                 <option value="masculino">Masculino</option>
+                 <option value="bazucas">Bazuca</option>
              {% endif %}
-             {% if alumno.genero == "femenino" %}
-                 <option value="femenino" selected>Femenino</option>
+
+             {% if parlante.tipo == "karaoke" %}
+                 <option value="karaoke" selected>Karaoke</option>
              {% else %}
-             <option value="femenino">Femenino</option>
+                 <option value="karaoke">Karaoke</option>
+             {% endif %}
+
+             {% if parlante.tipo == "parlantes" %}
+                 <option value="parlantes" selected>Parlante</option>
+             {% else %}
+                 <option value="parlantes">Parlante</option>
+             {% endif %}
+
+             {% if parlante.tipo == "cubos" %}
+                 <option value="cubos" selected>Cubo</option>
+             {% else %}
+                 <option value="cubos">Cubo</option>
+             {% endif %}
+
+             {% if parlante.tipo == "deDJ" %}
+                 <option value="deDJ" selected>De DJ</option>
+             {% else %}
+                 <option value="deDJ">De DJ</option>
              {% endif %}
          </select>
         <br>
@@ -36,9 +51,9 @@
                  <input type="file" name="foto" id="id_foto"
 
                         >
-        {% if alumno.foto %}
-           <tr><td><p>{{alumno.foto.url }}</p></td></tr>
-          <tr><td><p><img src="{{alumno.foto.url}}"></p></td></tr>
+        {% if parlante.foto %}
+           <tr><td><p>{{parlante.foto.url }}</p></td></tr>
+          <tr><td><p><img src="{{parlante.foto.url}}"></p></td></tr>
         {% endif %}
         <br><br>
         <input type="submit" name="opcion" value="Actualizar">
