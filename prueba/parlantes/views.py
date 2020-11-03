@@ -104,3 +104,8 @@ def eliminar_por_nombre(request):
            return render(request, 'parlantes/error/error_201.html', {})
     else:
         return render(request, 'parlantes/error/error_203.html', {})
+
+def editar(request):
+    print("ok, estamos en la vista editar")
+    context = {}
+    return render(request, 'parlantes/boton_editar.html', context)
