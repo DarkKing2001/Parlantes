@@ -49,3 +49,8 @@ def agregar_parlante(request):
            return render(request, 'parlantes/error/error_201.html', {})
     else:
         return render(request, 'parlantes/error/error_203.html', {})
+
+def boton_buscar(request):
+    print("ok, estamos en la vista boton buscar")
+    context={}
+    return render(request, 'parlantes/crud/boton_buscar.html', context)
