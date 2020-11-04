@@ -109,6 +109,7 @@ def eliminar_por_nombre(request):
        if mi_nombre != "":
            try:
                parlante = Parlante()
+               #parlante = Parlante.objects.all()
                parlante = Parlante.objects.get(nombre = mi_nombre)
                if parlante is not None:
                    print("Parlante=", parlante)
