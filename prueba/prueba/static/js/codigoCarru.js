@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //    var instances = M.FormSelect.init(elems, options);
 //});
 
-//$(document).ready(function(){
-//   $('select').formSelect();
-//});
+$(document).ready(function(){
+   $('select').formSelect();
+});
