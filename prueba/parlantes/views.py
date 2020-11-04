@@ -182,3 +182,8 @@ def actualizar_parlante(request):
            return render(request, 'parlantes/errores/error_201.html', {})
     else:
         return render(request, 'parlantes/errores/error_203.html', {})
+
+def listar(request):
+    print("ok, estamos en la vista listar")
+    context={}
+    return render(request, 'parlantes/crud/listar.html', context)
