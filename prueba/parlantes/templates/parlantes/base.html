@@ -27,22 +27,20 @@
     <body>
 
         {% if user.get_username == 'franco' %}
-            <ul id="dropdown1" class="dropdown-content">
-              <li><a href="#">one</a></li>
-              <li><a href="#">two</a></li>
-              <li class="divider"></li>
-              <li><a href="#">three</a></li>
-            </ul>
-            <nav>
-              <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">{{user.get_username}}</a>
-                <ul class="right hide-on-med-and-down">
+            <div class="navbar-fixed">
+                <nav>
+                    <div id="pestan" class="nav-wrapper">
+                      <a href="menu" class="brand-logo"><i class="large material-icons">radio</i></a>
+                      <ul id="nav-mobil" class="right hide-on-med-and-down">
                         <li><a href="tipo_parlante">Parlantes</a></li>
-                  <!-- Dropdown Trigger -->
-                  <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Opciones<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-              </div>
-            </nav>
+                        <li><a href="agregar">Agregar</a></li>
+                        <li><a href="boton_buscar">Buscar</a></li>
+                        <li><a href="eliminar">Eliminar</a></li>
+                        <li><a href="editar">Modificar</a></li>
+                      </ul>
+                    </div>
+                </nav>
+            </div>
         {% else %}
             <div class="navbar-fixed">
                 <nav>
