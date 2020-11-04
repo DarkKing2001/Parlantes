@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>listado de Alumnos</title>
-</head>
-<body>
-    <h1>Listado de Alumnos</h1>
+{% extends "parlantes/base.html" %}
+
+{%block title %} listado de Parlante {% endblock%}
+
+{% block content%}
+
+    <h1>Listado de Parlante</h1>
 
     <br><br>
 
-    la cantidad de alumnos es {{ listado | length }} <br> <br>
+    la cantidad de parlantes es {{ listado | length }} <br> <br>
 
-    {% for alumno in listado %}
-        {{ alumno.rut}} - {{ alumno.nombre}}
+    {% for parlante in listado %}
+        {{ parlante.nombre}} - {{ parlante.tipo}}
         <br>
     {% endfor %}
 
-</body>
-</html>
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

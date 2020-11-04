@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "parlantes/base.html" %}
+
+{%block title %} Listar {% endblock%}
+
+{% block content%}
+
     <h1> Boton Listar</h1>
     <br>
     <br>
 
-    <form action="mostrar_alumnos" method="post">
+    <form action="mostrar_parlantes" method="post">
         {% csrf_token %}
-        <label>cantidad de alumnos</label>
+        <label>cantidad de parlantes</label>
         <input type="submit" name="opcion" value="Listar">
     </form>
-</body>
-</html>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

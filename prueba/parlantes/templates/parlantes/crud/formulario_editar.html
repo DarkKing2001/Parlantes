@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+{% extends "parlantes/base.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Formulario Editar</title>
-</head>
-<body>
+
+{%block title %} Formulario Editar {% endblock%}
+
+{% block content%}
+
     <h1>Editar Dato de Parlante</h1>
     <br><br>
     <form action="actualizar_parlante" method="POST" enctype="multipart/form-data">
@@ -58,5 +57,9 @@
         <br><br>
         <input type="submit" name="opcion" value="Actualizar">
     </form>
-</body>
-</html>
+
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}
