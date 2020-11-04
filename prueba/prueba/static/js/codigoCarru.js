@@ -14,3 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //const elemsDropdown = document.querySelectorAll(".dropdown-trigger");
 //const instanceDropdown = M.Dropdown.init(elemsDropdown);
+
+//document.addEventListener('DOMContentLoaded', function() {
+//    var elems = document.querySelectorAll('select');
+//    var instances = M.FormSelect.init(elems, options);
+//});
+
+$(document).ready(function(){
+    $('select').formSelect();
+});
