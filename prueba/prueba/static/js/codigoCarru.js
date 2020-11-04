@@ -10,3 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//navBar
+
+//const elemsDropdown = document.querySelectorAll(".dropdown-trigger");
+//const instanceDropdown = M.Dropdown.init(elemsDropdown);
