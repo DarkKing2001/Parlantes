@@ -5,6 +5,8 @@
 
 {% block content%}
 
+<div id="caja2">
+
     <h1>Editar Dato de Parlante</h1>
     <br><br>
     <form action="actualizar_parlante" method="POST" enctype="multipart/form-data">
@@ -55,8 +57,9 @@
           <tr><td><p><img src="{{parlante.foto.url}}"></p></td></tr>
         {% endif %}
         <br><br>
-        <input type="submit" name="opcion" value="Actualizar">
+        <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Actualizar">
     </form>
+</div>
 
 {% endblock %}
 

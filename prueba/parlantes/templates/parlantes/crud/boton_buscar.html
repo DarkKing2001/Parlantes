@@ -4,6 +4,8 @@
 
 {% block content%}
 
+<div id="caja2">
+
     <h1> Boton buscar</h1>
     <br>
     <br>
@@ -12,8 +14,10 @@
         {% csrf_token %}
         <label>Ingrese el Nombre</label>
         <input type="text" name="nombre">
-        <input type="submit" name="opcion" value="Buscar">
+        <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Buscar">
     </form>
+
+</div>
 
 {% endblock %}
 

@@ -4,6 +4,8 @@
 
 {% block content%}
 
+<div id="caja2">
+
     <h1> Boton Listar</h1>
     <br>
     <br>
@@ -11,8 +13,10 @@
     <form action="mostrar_parlantes" method="post">
         {% csrf_token %}
         <label>cantidad de parlantes</label>
-        <input type="submit" name="opcion" value="Listar">
+        <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Listar">
     </form>
+
+</div>
 
 {% endblock %}
 

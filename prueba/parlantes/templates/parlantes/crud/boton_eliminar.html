@@ -4,6 +4,8 @@
 
 {% block content%}
 
+<div id="caja2">
+
     <h1> Boton eliminar</h1>
     <br>
     <br>
@@ -12,8 +14,10 @@
         {% csrf_token %}
         <label>Ingrese el nombre para eliminar</label>
         <input type="text" name="nombre">
-        <input type="submit" name="opcion" value="Eliminar">
+        <input class="waves-effect waves-light btn" type="submit" name="opcion" value="Eliminar">
     </form>
+
+</div>
 
 {% endblock %}
 
