@@ -188,7 +188,7 @@ def listar(request):
     context={}
     return render(request, 'parlantes/crud/listar.html', context)
 
-def mostrar_alumnos(request):
+def mostrar_parlantes(request):
     print("ok, estamos en la vista mostrar parlantes")
     #lista = Parlante.objects.all()
     lista = Parlante.objects.filter(tipo = 'bazucas')
