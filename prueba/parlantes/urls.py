@@ -16,4 +16,5 @@ urlpatterns = [
     path('editar_por_nombre', views.editar_por_nombre, name='editar_por_nombre'),
     path('actualizar_parlante', views.actualizar_parlante, name='actualizar_parlante'),
     path('listar', views.listar, name='listar'),
+    path('mostrar_parlantes', views.mostrar_parlantes, name='mostrar_parlantes'),
 ]
