@@ -166,20 +166,23 @@ def actualizar_parlante(request):
        mi_foto   = request.FILES['foto']
 
        if mi_nombre != "":
-           try:
-               parlante = Parlante()
+           if mi_tipo == 'bazucas' or mi_tipo == 'Karaoke' or mi_tipo == 'parlantes' or mi_tipo == "cubos" or mi_tipo == "deDJ":
+               try:
+                   parlante = Parlante()
 
-               parlante.id_parlante = mi_id
-               parlante.nombre = mi_nombre
-               parlante.tipo = mi_tipo
-               parlante.foto = mi_foto
+                   parlante.id_parlante = mi_id
+                   parlante.nombre = mi_nombre
+                   parlante.tipo = mi_tipo
+                   parlante.foto = mi_foto
 
-               parlante.save()
+                   parlante.save()
 
-               return render(request, 'parlantes/mensajes/dato_editado.html',{})
+                   return render(request, 'parlantes/mensajes/dato_editado.html',{})
 
-           except parlante.DoesNotExist:
-               return render(request, 'parlantes/errores/error_204.html', {})
+               except parlante.DoesNotExist:
+                   return render(request, 'parlantes/errores/error_204.html', {})
+           else:
+               return render(request, 'parlantes/errores/error_205.html', {})
        else:
            return render(request, 'parlantes/errores/error_201.html', {})
     else:
